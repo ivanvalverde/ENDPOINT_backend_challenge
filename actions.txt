@@ -1,0 +1,9 @@
+CREATE images/large
+CREATE videos
+DELETE videos/pets
+CREATE music/rock/heavymetal
+LIST
+MOVE images/large music/rock
+LIST
+DELETE videos
+LIST
