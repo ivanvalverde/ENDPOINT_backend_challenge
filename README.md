@@ -26,6 +26,13 @@
 
 Backend challenge proposed by the company to fill a developer position at the respective project
 
+## Usability
+
+This API has a POST route which reads what's in *input/actions.txt* and responds according to its content.
+Feel free to change *input/actions.txt* (the *input/text.txt* should not be changed, it has test purposes) following the suggested pattern in the instructions provided.
+
+First, open a terminal on this directory and install the dependencies of the project (Installation step below). The next step consists in running the application (Running the app step below). To have a better experience, access the swagger route (highlighted in the routes section) and try it out there (press *Try it out* and *Execute* and the response will be displayed in the server response area).
+
 
 ## Installation
 
@@ -46,6 +53,11 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Routes
+
+- *localhost:3000/directories* - POST route which reads the content in *input/actions.txt* and responds accordingly given actions. No params required.
+- *localhost:3000/api* - Swagger available route.
+
 ## Test
 
 ```bash
@@ -59,16 +71,7 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- Author - [Ivan Valverde](https://telescope.epam.com/who/Ivan_Valverde?tab=profile)
+- Email - Ivan_Rodrigues@epam.com

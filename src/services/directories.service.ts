@@ -5,7 +5,10 @@ import { DirectoriesTree } from 'src/types/directoryTree';
 @Injectable()
 export class DirectoriesService {
   operateDirectories(): string {
-    const fileContent = readFileSync('actions.txt', 'utf-8');
+    const fileContent = readFileSync(
+      process.env.TEST ? 'inputs/test.txt' : 'inputs/actions.txt',
+      'utf-8',
+    );
     const methods = ['CREATE ', 'MOVE ', 'DELETE ', 'LIST'];
     const directoriesStructure: DirectoriesTree[] = [];
     let response = '';
@@ -124,15 +127,10 @@ export class DirectoriesService {
         i++;
       }
     } else {
-      directoriesStructure.splice(
-        directoriesStructure.indexOf(dirToDelete),
-        directoriesStructure.indexOf(dirToDelete) - 1,
-      );
+      directoriesStructure.splice(directoriesStructure.indexOf(dirToDelete), 1);
 
       const newDirectoriesStructure = directoriesStructure.filter((dir) => {
-        return dirToDelete?.name
-          ? !dir.relatives.includes(dirToDelete?.name)
-          : true;
+        return !dir.relatives.includes(dirToDelete?.name);
       });
 
       directoriesStructure.length = 0;

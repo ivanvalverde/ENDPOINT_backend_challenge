@@ -1,0 +1,7 @@
+CREATE public
+CREATE private/confidential
+LIST
+MOVE private/confidential public
+LIST
+DELETE private/confidential
+LIST

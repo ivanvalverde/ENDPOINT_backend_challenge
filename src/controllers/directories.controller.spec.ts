@@ -1,14 +1,22 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { DirectoriesController } from './directories.controller';
 import { DirectoriesService } from '../services/directories.service';
+import { mockedResponseController } from '../mocks/controllerMocks';
 
-describe('AppController', () => {
+describe('DirectoriesController', () => {
   let directoriesController: DirectoriesController;
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
       controllers: [DirectoriesController],
-      providers: [DirectoriesService],
+      providers: [
+        {
+          provide: DirectoriesService,
+          useFactory: () => ({
+            operateDirectories: jest.fn(() => mockedResponseController),
+          }),
+        },
+      ],
     }).compile();
 
     directoriesController = app.get<DirectoriesController>(
@@ -16,9 +24,11 @@ describe('AppController', () => {
     );
   });
 
-  describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(directoriesController.operateDirectories()).toBe('Hello World!');
+  describe('operateDirectories', () => {
+    it('should return a mocked string response provided by service', () => {
+      expect(directoriesController.operateDirectories()).toBe(
+        mockedResponseController,
+      );
     });
   });
 });
