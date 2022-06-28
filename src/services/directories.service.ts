@@ -153,9 +153,7 @@ export class DirectoriesService {
         } else if (dir.level === i + 1) {
           listResponse = listResponse.replace(
             `${dir.parent}\n`,
-            `${dir.parent}\n${' '.repeat(
-              dir.level === 0 ? dir.level : dir.level - 1,
-            )}${dir.name}\n`,
+            `${dir.parent}\n${' '.repeat(dir.level - 1)}${dir.name}\n`,
           );
         }
       });
