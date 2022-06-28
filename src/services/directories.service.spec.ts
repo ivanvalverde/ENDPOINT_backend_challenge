@@ -19,7 +19,6 @@ import {
 import { DirectoriesTree } from '../types/directoryTree';
 
 describe('DirectoriesService', () => {
-  jest.mock('fs');
   let directoriesService: DirectoriesService;
 
   beforeEach(async () => {
