@@ -99,21 +99,21 @@ export const mockedListDirectories: DirectoriesTree[] = [
   ...mockedBeforeChangeDeleteResponse,
 ];
 
-export const mockedListResponse = `oldfiles\n  file\nnewfiles\n`;
+export const mockedListResponse = `oldfiles\n file\nnewfiles\n`;
 export const mockedOperateDirectoriesResponse = `CREATE public
 CREATE private/confidential
 LIST
 public
 private
-  confidential
+ confidential
 MOVE private/confidential public
 LIST
 public
-  confidential
+ confidential
 private
 DELETE private/confidential
 Cannot delete private/confidential - confidential does not exist
 LIST
 public
-  confidential
+ confidential
 private\n`;

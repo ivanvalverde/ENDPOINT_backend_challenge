@@ -24,8 +24,7 @@ export class DirectoriesService {
         response = response + this.delete(methods, directoriesStructure, line);
       } else if (line.includes(methods[3])) {
         response = response + `${line}\n`;
-        const listResponse = this.list(directoriesStructure);
-        response = response + listResponse;
+        response = response + this.list(directoriesStructure);
       }
     });
 
