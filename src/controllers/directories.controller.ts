@@ -5,7 +5,7 @@ import { DirectoriesService } from '../services/directories.service';
 @ApiTags('Directories')
 @Controller('/directories')
 export class DirectoriesController {
-  constructor(private readonly appService: DirectoriesService) {}
+  constructor(private readonly directoriesService: DirectoriesService) {}
 
   @ApiResponse({
     status: 201,
@@ -15,6 +15,6 @@ export class DirectoriesController {
   })
   @Post()
   operateDirectories(): string {
-    return this.appService.operateDirectories();
+    return this.directoriesService.operateDirectories();
   }
 }
